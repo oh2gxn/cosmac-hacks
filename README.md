@@ -1,12 +1,12 @@
 # cosmac-hacks
-Various programs for the Membership Card / RCA 1802
+Various programs for the 1802 Membership Card
 
 Due to my interests in both embedded / low-level programming and 
 retro electronics, I started hacking with a modern version of the
 70's COSMAC ELF.
 
 ## Hardware
-Currently, I'm running these programs on the Membership Card (Rev. G) 
+Currently, I'm running these programs on the 1802 Membership Card (Rev. G) 
 by Lee Hart et al.
 http://www.retrotechnology.com/memship/memship.html
 
