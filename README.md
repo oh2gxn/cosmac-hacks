@@ -32,19 +32,21 @@ Example:
 
 
 ## List of current programs
-The src directory contains:
-- *blinkQfast*: a test program flipping Q on/off as fast as possible
-- *blinkQslow*: a similar test with a delay loop
-- *valotin*: test for reading input switches and controlling output LEDs
+The test programs from the 1802 Membership Card manual:
+- `blinkQfast`: a test program flipping Q on/off as fast as possible
+- `blinkQslow`: a similar test with a delay loop
+- `valotin`: test for reading input switches and controlling output LEDs
+
+There was no mention about a software licence, but I suppose sharing these simple examples falls into the category of "fair use". Besides, the comments and potential bugs are mine :)
 
 
 ## TODO: more programs...
 At least the following are planned:
-- *memtest*: The amount of RAM can be doubled by installing another 32k RAM
+- `memtest`: The amount of RAM can be doubled by installing another 32k RAM
   chip and using the 16th address bit (and its inverse) for the chip output 
   enable pins. However, the bit-inverting FET in Rev. G might not work 
   reliably with all RAM chips, so there is a need for a test program.
-- *bytebeat*: This would require an 8-bit 8kHz "sound card" =)
+- `bytebeat`: This would require an 8-bit 8kHz "sound card" =)
 
 
 -Janne, OH2GXN
