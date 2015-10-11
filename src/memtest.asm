@@ -26,13 +26,13 @@
 0015 FB         XRI    .. D = xor(D,
 0016 FF                ..   0xFF) to test if R2.lo != 0xFF
 0017 3A         BNZ    .. Branch if not 0x00 (at least few bytes left)
-0018 xx                ..   to LOOP
-0019 92         GHI 2  .. D = R2.hi (so R2.lo == 0xFF here)
+0018 09                ..   to LOOP
+0019 92         GHI 2  .. D = R2.hi (R2.lo == 0xFF below this point)
 001A FB         XRI    .. D = xor(D,
 001B 7F                ..   0x7F) to test if R2.hi != 0x7F (32k limit!)
-001C CE         LSZ    .. Skip BR if R2 == 0x7FFF (PASS)
-001D 30         BR     .. Branch 
-001E 09                ..   to LOOP (more than 256 bytes left)
-001F 38 PASS:   SKP    .. skip error indication (or just IDL?)
+001C 3A         BNZ    .. Branch
+001D 09                ..   to LOOP (more than 256 bytes left)
+001E 7A PASS:   REQ    .. Q off (redundant)
+001F 00         IDL    .. stop, leaving R2.hi visible, but Q off
 0020 7B FAIL:   SEQ    .. turn Q on (TODO: blink R2.lo / R2.hi alternately)
-0021 00 END:    IDL    .. stop here
+0021 00         IDL    .. stop, leaving R2.hi and Q visible
