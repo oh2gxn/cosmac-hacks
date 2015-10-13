@@ -39,14 +39,18 @@ The test programs from the 1802 Membership Card manual:
 
 There was no mention about a software licence, but I suppose sharing these simple examples falls into the category of "fair use". Besides, the comments and potential bugs are mine :)
 
-
-## TODO: more programs...
-At least the following are planned:
+My hack for testing RAM:
 - `memtest`: The amount of RAM can be doubled by installing another 32k RAM
   chip and using the 16th address bit (and its inverse) for the chip output 
   enable pins. However, the bit-inverting FET in Rev. G might not work 
   reliably with all RAM chips, so there is a need for a test program.
+
+
+## TODO: more programs...
+At least the following are planned:
 - `bytebeat`: This would require an 8-bit 8kHz "sound card" =)
+- some recent revision of ETOPS?
+- some equivalent of PAL Pixie (more HW)?
 
 
 -Janne, OH2GXN
