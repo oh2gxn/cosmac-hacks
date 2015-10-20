@@ -1,8 +1,8 @@
-.. Tests each byte of RAM by writing and reading the given (switched) pattern.
+.. Tests each byte of RAM by writing and reading the given (switched) pattern N.
 .. Starts from the first free byte and counts to the last byte available,
 .. displaying the high byte of the address on LEDs (nice binary counter, eh).
 .. In case of failure, turns Q on and halts at the failing address.
-.. After the execution, RAM should have DATA = {7F, sw, sw, sw...}.
+.. After the execution, RAM should have DATA = {FF, n, n, n...}.
 .. TODO: This does not test HW bugs in addressing (e.g. pin A8==1),
 .. which would require writing "unique" (or non-aligned) data for each byte,
 .. then reading and testing it didn't get "out of phase" at some boundary.
@@ -39,7 +39,7 @@
 001D 0D                ..   to LOOP (at least few bytes left)
 001E 93         GHI 3  .. D = R3.hi (R3.lo == 0xFF at this point)
 001F FB         XRI    .. D = xor(D,
-0020 7F                ..   0x7F) to test if R3.hi != 0x7F (32k limit!)
+0020 FF                ..   0xFF) to test R3.hi (Use 7F for 32k RAM!)
 0021 3A         BNZ    .. Branch
 0022 0D                ..   to LOOP (at least 256 bytes left)
 0023 00 PASS:   IDL    .. stop, leaving R3.hi visible, but Q off
