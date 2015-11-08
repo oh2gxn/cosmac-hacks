@@ -714,12 +714,12 @@ wire to board 2.54 mm (0.100") pitch header</description>
 </classes>
 <parts>
 <part name="F1" library="special" deviceset="FUSE" device="" value="1A"/>
-<part name="S1" library="switch" deviceset="M9040P2" device="" value="RUN"/>
+<part name="S1" library="switch" deviceset="M9040P2" device="" value="RUN/LED"/>
 <part name="PAD1" library="wirepad" deviceset="SMD5" device="" value="+4V5"/>
 <part name="PAD2" library="wirepad" deviceset="SMD5" device="" value="0V"/>
 <part name="X1" library="con-molex" deviceset="C-GRID-04" device="-70553"/>
-<part name="JP1" library="pinhead" deviceset="PINHD-1X2" device="/90" value="FIXED GND"/>
-<part name="JP2" library="pinhead" deviceset="PINHD-1X2" device="/90" value="FIXED PWR"/>
+<part name="JP1" library="pinhead" deviceset="PINHD-1X2" device="/90" value="LED!"/>
+<part name="JP2" library="pinhead" deviceset="PINHD-1X2" device="/90" value="RUN!"/>
 </parts>
 <sheets>
 <sheet>
@@ -727,8 +727,8 @@ wire to board 2.54 mm (0.100") pitch header</description>
 </plain>
 <instances>
 <instance part="F1" gate="G$1" x="30.48" y="60.96"/>
-<instance part="S1" gate="2" x="53.34" y="50.8" rot="R270"/>
-<instance part="S1" gate="1" x="53.34" y="63.5" rot="R270"/>
+<instance part="S1" gate="2" x="50.8" y="50.8" rot="R270"/>
+<instance part="S1" gate="1" x="50.8" y="63.5" rot="R270"/>
 <instance part="PAD1" gate="1" x="10.16" y="60.96"/>
 <instance part="PAD2" gate="1" x="10.16" y="50.8"/>
 <instance part="X1" gate="-1" x="76.2" y="63.5"/>
@@ -765,8 +765,10 @@ wire to board 2.54 mm (0.100") pitch header</description>
 <junction x="66.04" y="48.26"/>
 <junction x="66.04" y="45.72"/>
 <pinref part="S1" gate="2" pin="P"/>
-<wire x1="43.18" y1="50.8" x2="48.26" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="43.18" y1="50.8" x2="45.72" y2="50.8" width="0.1524" layer="91"/>
 <junction x="43.18" y="50.8"/>
+<pinref part="S1" gate="2" pin="S"/>
+<wire x1="55.88" y1="48.26" x2="66.04" y2="48.26" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -785,9 +787,14 @@ wire to board 2.54 mm (0.100") pitch header</description>
 <wire x1="76.2" y1="73.66" x2="66.04" y2="73.66" width="0.1524" layer="91"/>
 <junction x="66.04" y="76.2"/>
 <junction x="66.04" y="73.66"/>
-<wire x1="43.18" y1="60.96" x2="48.26" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="43.18" y1="60.96" x2="45.72" y2="60.96" width="0.1524" layer="91"/>
 <junction x="43.18" y="60.96"/>
 <pinref part="S1" gate="1" pin="P"/>
+<pinref part="S1" gate="1" pin="S"/>
+<wire x1="55.88" y1="58.42" x2="60.96" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="60.96" y1="58.42" x2="60.96" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="60.96" y1="55.88" x2="43.18" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="43.18" y1="55.88" x2="43.18" y2="60.96" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$4" class="0">
@@ -796,7 +803,7 @@ wire to board 2.54 mm (0.100") pitch header</description>
 <pinref part="X1" gate="-2" pin="S"/>
 <wire x1="63.5" y1="60.96" x2="73.66" y2="60.96" width="0.1524" layer="91"/>
 <pinref part="S1" gate="1" pin="O"/>
-<wire x1="58.42" y1="63.5" x2="63.5" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="55.88" y1="63.5" x2="63.5" y2="63.5" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$5" class="0">
@@ -805,7 +812,7 @@ wire to board 2.54 mm (0.100") pitch header</description>
 <pinref part="X1" gate="-3" pin="S"/>
 <wire x1="63.5" y1="58.42" x2="73.66" y2="58.42" width="0.1524" layer="91"/>
 <pinref part="S1" gate="2" pin="O"/>
-<wire x1="58.42" y1="53.34" x2="63.5" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="55.88" y1="53.34" x2="63.5" y2="53.34" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
